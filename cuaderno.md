@@ -216,7 +216,7 @@ vim subdominios_crt.txt
 >whois $IP | grep -iE 'orgname|netname|country'
 >```
 
->[!abstract]
+>[!important]
 >Como tenía dos archivos con subdominios (uno de *crt.sh* y el otro de `subfinder`) he decidido moverlos todos a un mismo archivo `subdominios_total.txt`.
 >
 >Como en ambos archivos existían dominios repetidos, los he limpiado de la siguiente manera:
@@ -241,7 +241,7 @@ Una vez tenemos todos los subdominios, podemos ir iterando sobre el con un peque
 ```bash
 while read -r linea; do
     # Nos saltamos los subdominios con wildcards
-    if [[ "$linea" == *"*"* ]]; then
+    if [[ "$linea" == *"*"* ]; then
         continue
     fi
 
@@ -249,7 +249,7 @@ while read -r linea; do
     IP=$(dig +short "$linea" | grep -oP '(?<!\d)(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}(?!\d)')
 
     # Si nos ha devuelto la IP del subdominio
-    if [[ -n "$IP" ]]; then
+    if [[ -n "$IP" ]; then
 	    # Por cada IP devuelta, analizamos
         for sub_ip in $(echo "$IP"); do
             echo "WHOIS: $sub_ip ($linea)"
@@ -343,7 +343,7 @@ Country:        US
 
 *Netcraft* no ofrece una API JSON gratuita con la que poder obtener los datos para un post-procesado automático, por lo que nos veremos obligados a usar la GUI de su aplicación web.
 
-![[Pasted image 20261031133123.png]]
+[Pasted image 20261031133123.png](./img/Pasted%20image%2020261031133123.png)
 
 ---
 # Ficheros Expuestos
@@ -440,7 +440,7 @@ https://www.snapchat.com/.well-known/gpc.json
 # Servicios expuestos
 ## Shodan
 
-![[Pasted image 20261031130359.png]]
+[Pasted image 20261031130359.png](./img/Pasted%20image%2020261031130359.png)
 
 ```bash
 # aws.duplex.snapchat.com
@@ -507,14 +507,14 @@ curl -s https://internetdb.shodan.io/54.241.238.63 | jq
 }
 ```
 
-![[Pasted image 20261031132032.png]]
+[Pasted image 20261031132032.png](./img/Pasted%20image%2020261031132032.png)
 
 ---
 # Google Dorks
 
-![[Pasted image 20261031133437.png]]
+[Pasted image 20261031133437.png](./img/Pasted%20image%2020261031133437.png)
 
-![[Pasted image 20261031142700.png]]
+[Pasted image 20261031142700.png](./img/Pasted%20image%2020261031142700.png)
 
 >Tras varias búsquedas, no encontramos nada interesante.
 
@@ -523,14 +523,14 @@ curl -s https://internetdb.shodan.io/54.241.238.63 | jq
 
 Hasta ahora no hemos encontrado ningún correo electrónico de ningún empleado, por lo que no conocemos el formato de las direcciones de correo electrónico de la organización. No obstante, existen plataformas como ***[RocketReach](https://rocketreach.co/)*** en donde podemos encontrar información sobre la empresa.
 
-![[Pasted image 20261031223008.png]]
+[Pasted image 20261031223008.png](./img/Pasted%20image%2020261031223008.png)
 
 Además, herramientas como ***[Hunter.io](https://hunter.io/)***, no pueden ayudar a encontrar correos electrónicos.
 
-![[Pasted image 20261031222618.png]]
+[Pasted image 20261031222618.png](./img/Pasted%20image%2020261031222618.png)
 
-![[Pasted image 20261101013304.png]]
+[Pasted image 20261101013304.png](./img/Pasted%20image%2020261101013304.png)
 
-![[Pasted image 20261101012626.png]]
+[Pasted image 20261101012626.png](./img/Pasted%20image%2020261101012626.png)
 
-![[Pasted image 20261101013605.png]]
+[Pasted image 20261101013605.png](./img/Pasted%20image%2020261101013605.png)
