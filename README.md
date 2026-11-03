@@ -5,5 +5,6 @@
 # Enlaces a Recursos
 
 - **[alcance](./alcance)**
+- **[scope](./scope.txt)**
 - **[cuaderno](./cuaderno)**
 - **[mapa](./mapa)**
