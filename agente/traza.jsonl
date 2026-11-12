@@ -1,0 +1,414 @@
+```json
+{
+  "t": 1793983242.43,
+  "tipo": "inicio",
+  "objetivo": "Realiza el reconocimiento pasivo del dominio snapchat.com y a todos los subdominios dentro del scope.",
+  "modelo": "corsario-1",
+  "herramientas": [
+    "whois_dominio",
+    "dns_registros",
+    "subdominios_crtsh",
+    "tecnologias_whatweb",
+    "subdominios_subfinder",
+    "correos_theharvester",
+    "huella_netcraft"
+  ]
+}
+{
+  "t": 1793983287.944,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "whois_dominio",
+  "argumentos": "{\"dominio\": \"snapchat.com\"}",
+  "resultado": "Dominio: SNAPCHAT.COM\nregistration: 2012-02-28T19:29:26Z\nexpiration: 2034-02-28T19:29:26Z\nlast changed: 2026-01-28T11:47:25Z\nlast update of RDAP database: 2026-11-06T16:41:18Z\nEntidad (registrar): 292\nNameservers: NS-1468.AWSDNS-55.ORG, NS-1892.AWSDNS-44.CO.UK, NS-220.AWSDNS-27.COM, NS-530.AWSDNS-02.NET\nEstado: client delete prohibited, client transfer prohibited, client update prohibited, server delete prohibited, server transfer prohibited, server update prohibited",
+  "bloqueado": false
+}
+{
+  "t": 1793983287.969,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "34.149.46.130",
+  "bloqueado": false
+}
+{
+  "t": 1793983287.994,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"tipo\": \"AAAA\"}",
+  "resultado": "Sin registros AAAA para snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983288.022,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"tipo\": \"MX\"}",
+  "resultado": "10 aspmx.l.google.com.\n40 aspmx2.googlemail.com.\n30 alt2.aspmx.l.google.com.\n50 aspmx3.googlemail.com.\n20 alt1.aspmx.l.google.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983288.047,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"tipo\": \"NS\"}",
+  "resultado": "ns-1468.awsdns-55.org.\nns-530.awsdns-02.net.\nns-1892.awsdns-44.co.uk.\nns-220.awsdns-27.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983288.103,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"tipo\": \"TXT\"}",
+  "resultado": "\"apple-domain-verification=hAi0YbrGnN5ny4wm\"\n\"MS=255BA8D56417782169DA12894F5A53521A65F7F2\"\n\"parallels-domain-verification=58886ce349db42dfbfb94599884a65ead28c9543a5c947df8fc596694c81eba6\"\n\"v=spf1 include:_spf.google.com include:mail.zendesk.com include:aspmx.pardot.com -all\"\n\"dropbox-domain-verification=oypu2eeh56yg\"\n\"onetrust-domain-verification=faca66624bfe477db467f97c7583b7ba\"\n\"google-site-verification=eye-nbnjs2nv4ll-8vo9ijpgkdvyrs8h2j_1bzkp-t0\"\n\"arcules-domain-verification=kEVxs7LUGURYpDYCelXSgp02wBuL6A82zKQMMw8lGzR\"\n\"3ae8f0a14f7a4c98a9023fe8947467bd\"\n\"nyy2gbb26yz2kntxp7ynycsvql0swn71\"\n\"atlassian-domain-verification=P7v4/0SuI03V2xsQfPTYYZLbRwBN1QkqBg4E/zqmJVvyWKraMaJRbamwkK2vWrx0\"\n\"atlassian-domain-verification=t2mP/OxdJvz/S28h3o/5egOc105U1aKneVRngll9cfhI4Un8gQxYaQjIPVaKpKpT\"\n\"openai-domain-verification=dv-qRVXfFNUY6fVpEXy5skTuRnd\"\n\"google-site-verification=Eo-pwhENGkrh6E74BafjjhjK4dGk0B1Tv12bUn5UPSY\"\n\"google-site-verification=Ro2UVvcjx7U_bRc-_HAUELMOxwk4Y6n5FX9FQt8BDsQ\"\n\"krea-verification=b6d6daff3226c8bdfa48187fc11d00d721aa8ed08878659c1ee40b73104da392\"\n\"adobe-idp-site-verification=1b7089e1333b1302c4f425ff60baae967ac377d76fb6aa7bb61c9f0282fd664d\"\n\"onetrust-domain-verification=32eb1654587e494fbd3b4f8a54a6b57f\"\n\"yahoo-verification-key=T1Hbkkgw9crF2nr93/q/Zb+IzUPXWSZEmqh1G5VCds0=\"\n\"google-site-verification=bgzZGVgOr4py5YcPQHFZYJFJbarBD_shCxIvjQS1grI\"\n\"shopify-verification-code=6AbSmjYHNX0fOCzG0oBfncSsCVJfgT\"\n\"anthropic-domain-verification-kg6835=FrP90V31rmTTa7Cu3plqLLMEx\"\n\"https://issues.sonatype.org/browse/OSSRH-54682\"\n\"pardot_346841_*=de35b68dd0e766cfba41cc068f8b424a6ce7ac92052cb30fe9a4a55ac88a0583\"\n\"_hh9zpxhf35itout7v7mwibqktr44s3s\"\n\"hubspot-developer-verification=Zjk1NTNlNmYtODAxNi00YzNhLTgzNGEtY2JlNWQyNGRhZmFk\"\n\"miro-verification=b341b9dfb098865b7517b6c662e94e5538603be4\"\n\"yahoo-verification-key=hbsSgAjgGym9aXgBQSAX5APr5RKaTlmtGlqFTCMIEXo=\"\n\"docker-verification=2351a4bf-bc17-42ff-8fca-521e86376280\"\n\"segment-site-verification=e6U89hyQcmGvDFTApWYKvbj7NFSMu8zj\"\n\"atlassian-domain-verification=TH6BFQJRvZM36e0pNbXcEI/RpTrqBb2JDxzoBsBLa3RajLrpmc6pK6Quau40P7oa\"\n\"jamf-site-verification=_Y2-z-8UweEkmdMZsNbTJg\"\n\"autodesk-domain-verification=S6bhF0FKFgY957I6SLKW\"\n\"yahoo-verification-key=xUKCyvTR9ya3lyjYFuWPLGfSFLC/5C0y2txg4crwEbw=\"\n\"_vslgkwtl5nwrcpaotz2gw1t4k13zkwb\"\n\"linear-domain-verification=v82bwvzkpw5w\"\n\"logmein-verification-code=fd76bf0c-ec62-4587-bb84-4511579e41f4\"\n\"canva-site-verification=blQT_XTqOBtV9rXZPJYTvg\"\n\"TAILSCALE-bAU9TfNGoz4iD4hioxcp\"\n\"google-site-verification=tHsCd67KywyjuYvvr7V9I4PFTXXznN48z-jvPm20yBE\"\n\"censys-domain-verification=9U1U43sYXK5eDeoXbt8WB090FMa8IystN7iMx0waR50S\"\n\"snapchat-domain-verification-zx5hhx=Q7zL5FmxwFKyQWOuKc4blSh7k\"\n\"smartsheet-site-validation=dw0MifosV2eGg1JG9ZTtiGpSGNuiqybJ\"",
+  "bloqueado": false
+}
+{
+  "t": 1793983288.123,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"tipo\": \"SOA\"}",
+  "resultado": "ns-220.awsdns-27.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400",
+  "bloqueado": false
+}
+{
+  "t": 1793983288.432,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "subdominios_crtsh",
+  "argumentos": "{\"dominio\": \"snapchat.com\"}",
+  "resultado": "ERROR: crt.sh no respondió (HTTP Error 502: Bad Gateway). crt.sh suele ir lento; puedes reintentar más tarde o añadir otra fuente de subdominios.",
+  "bloqueado": false
+}
+{
+  "t": 1793983328.832,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "subdominios_subfinder",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"todas_las_fuentes\": true}",
+  "resultado": "264 subdominios en alcance (1 filtrados por estar fuera):\n0virus-antivirus.com.snappublisher.snapchat.com\n12antivirus.snappublisher.snapchat.com\n13.snappublisher.snapchat.com\n2012.snappublisher.snapchat.com\n252fweb.snapchat.com\n2fweb.snapchat.com\n4-antivirus.snappublisher.snapchat.com\n5.snappublisher.snapchat.com\n6-antivirus.snappublisher.snapchat.com\n7.antiviruschat-gateway332-prod.snappublisher.snapchat.com\n_cisco-uds._tcp.snappublisher.snapchat.com\n_cisco-uds.snappublisher.snapchat.com\n_collab-edge._tls.snappublisher.snapchat.com\n_collab-edge.snappublisher.snapchat.com\n_cuplogin._tcp.snappublisher.snapchat.com\n_dmarc.snappublisher.snapchat.com\n_etcd-server-ssl.snappublisher.snapchat.com\n_mta-sts.snappublisher.snapchat.com\n_tcp.snappublisher.snapchat.com\n_tls.snappublisher.snapchat.com\nacc.snappublisher.snapchat.com\naccounts.snapchat.com\nad-center.snapchat.com\nad-preview.snapchat.com\nads-preprod.snapchat.com\nads.snapchat.com\nadsapi.snapchat.com\nadsapi2.snapchat.com\nadvertising.snapchat.com\nai.snapchat.com\nam-api.snapchat.com\namchat.snapchat.com\nanalytics.anticloudappirus.snappublisher.snapchat.com\nantipayrus-private.snappublisher.snapchat.com\nantivirus-cloudfront.snappublisher.snapchat.com\nantivirus-kr.snappublisher.snapchat.com\nantivirus-reset.snappublisher.snapchat.com\nantivirus-spring.snappublisher.snapchat.com\nantivirus-tur.snappublisher.snapchat.com\nantivirus-us-east-3.snappublisher.snapchat.com\nantivirus-us-west-1.snappublisher.snapchat.com\nantivirus-z.snappublisher.snapchat.com\nantivirus.7.snappublisher.snapchat.com\nantivirus.chat-gateway075-prod.us-east-1.snappublisher.snapchat.com\nantivirus.dev1.snappublisher.snapchat.com\nantivirus.events.snappublisher.snapchat.com\nantivirus.internalantivirus-lb.snappublisher.snapchat.com\nantivirus.las.snappublisher.snapchat.com\nantivirus.marchvpnantivirus.snappublisher.snapchat.com\nantivirus.ssodocs.snappublisher.snapchat.com\nantivirus.trial.snappublisher.snapchat.com\nantivirus.us-east-1node.snappublisher.snapchat.com\nantivirussandbox.snappublisher.snapchat.com\nap-southeast1-aws192.snappublisher.snapchat.com\napi.snapchat.com\napi.snappublisher.snapchat.com\napp-analytics-dev.snapchat.com\napp-analytics-v2.snapchat.com\napp-analytics.snapchat.com\napp-snapchat.snapchat.com\napp.snapchat.com\nart.snapchat.com\nassets.snapchat.com\nats.snapchat.com\nauth.snapchat.com\naws-acc.api.snapchat.com\naws-proxy-gcp.api.snapchat.com\naws.api.snapchat.com\naws.duplex.snapchat.com\naws.staging.duplex.snapchat.com\nbbs.snappublisher.snapchat.com\nbillingantivirus.snappublisher.snapchat.com\nbitmoji.api.snapchat.com\nbusiness-manager.snapchat.com\nbusiness-preprod.snapchat.com\nbusiness.snapchat.com\nbusinessapi.snapchat.com\nbusinesshelp.snapchat.com\nc.antivirus.billing.snappublisher.snapchat.com\ncalendar.snapchat.com\ncameos.snapchat.com\ncamera-kit.snapchat.com\ncdn.snapchat.com\nchat-gateway000-prod-antivirus-us-east-9.snappublisher.snapchat.com\nchat-gateway145-prodantivirus.trial.snappublisher.snapchat.com\nchat-gateway155-prod.snappublish\n[... recortado: 5095 caracteres más]",
+  "bloqueado": false
+}
+{
+  "t": 1793983330.179,
+  "tipo": "herramienta",
+  "paso": 1,
+  "nombre": "correos_theharvester",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"fuentes\": \"crtsh,hackertarget,rapiddns,otx,urlscan,anubis,threatminer,duckduckgo,bing,yahoo\"}",
+  "resultado": "ERROR: theHarvester falló (1): sin detalles",
+  "bloqueado": false
+}
+{
+  "t": 1793983341.631,
+  "tipo": "herramienta",
+  "paso": 2,
+  "nombre": "huella_netcraft",
+  "argumentos": "{\"dominio\": \"snapchat.com\"}",
+  "resultado": "ERROR: Netcraft devolvió una página sin datos (probablemente se genera con JavaScript o bloquea clientes automáticos). Informe manual: https://sitereport.netcraft.com/?url=snapchat.com",
+  "bloqueado": false
+}
+{
+  "t": 1793983345.719,
+  "tipo": "herramienta",
+  "paso": 2,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://snapchat.com [301 Moved Permanently] Country[UNITED STATES][US], IP[34.149.46.130], RedirectLocation[https://www.snapchat.com:443/], UncommonHeaders[alt-svc]",
+  "bloqueado": false
+}
+{
+  "t": 1793983397.68,
+  "tipo": "herramienta",
+  "paso": 2,
+  "nombre": "subdominios_crtsh",
+  "argumentos": "{\"dominio\": \"snapchat.com\"}",
+  "resultado": "221 subdominios en alcance (2 filtrados por estar fuera):\naam-api.snapchat.com\naam-data-api.snapchat.com\naccounts.snapchat.com\nad-center.snapchat.com\nads-preprod.snapchat.com\nads.snapchat.com\nadsapi.snapchat.com\nadsapi2.snapchat.com\nadsapi3.snapchat.com\nadsapimus.snapchat.com\nadsapisam.snapchat.com\nadvertising.snapchat.com\nadvocates.snapchat.com\nam-api.snapchat.com\namchat.snapchat.com\nap-southeast1-aws.gateway.snapchat.com\napi.snapchat.com\napp-analytics-dev.snapchat.com\napp-analytics-v2.snapchat.com\napp-analytics.snapchat.com\napp-analytics2.snapchat.com\napp-analyticsv2.snapchat.com\napp.snapchat.com\nart.snapchat.com\nasia-southeast1.gs.airtime.cognac.snapchat.com\nasia-southeast1.gs.bmt.cognac.snapchat.com\nasia-southeast1.gs.catsr.cognac.snapchat.com\nats.snapchat.com\nattribution-shadow.snapchat.com\nauth.snapchat.com\naws.duplex.snapchat.com\naws.staging.duplex.snapchat.com\nbeta.snappublisher.snapchat.com\nbetapublish.snapchat.com\nblog.snapchat.com\nbolt-staging.snapchat.com\nbolt.snapchat.com\nbusiness-manager.snapchat.com\nbusiness.snapchat.com\nbusinesshelp.snapchat.com\nchat-gateway-prod.chat.snapchat.com\nchat-gateway-stage.chat.snapchat.com\nchat-internal.snapchat.com\nchat.snapchat.com\nclick.email.snapchat.com\nclick.learn.ads.snapchat.com\nclick.snapchat.com\ncloud.email.snapchat.com\ncloud.learn.ads.snapchat.com\ncommerce-merchant.snapchat.com\nconnect-api.snapchat.com\nconnect.snapchat.com\ncontent-insights-revenue.snapchat.com\ncontent-recognition.snapchat.com\ncreate.snapchat.com\ncreator.snapchat.com\ncreatorhelp.snapchat.com\ncreators.snapchat.com\ndeveloper.snapchat.com\ndevelopers.snapchat.com\ndocs.snapchat.com\nds.snapchat.com\neagle-prod.snapchat.com\nearn.snapchat.com\neducators.snapchat.com\neu-west1-aws.gateway.snapchat.com\neurope-west2.gs.airtime.cognac.snapchat.com\neurope-west2.gs.bmt.cognac.snapchat.com\neurope-west2.gs.catsr.cognac.snapchat.com\nevents.snapchat.com\nexperience.snapchat.com\nfocus.snapchat.com\nforbusiness.snapchat.com\ng2-test.snapchat.com\ngames.snapchat.com\ngateway.snapchat.com\ngeofilters-api.snapchat.com\ngeofilters-community-api.snapchat.com\ngeofilters.snapchat.com\ngroove.snapchat.com\ngs.bmp.cognac.snapchat.com\ngs.bmt.cognac.snapchat.com\ngs.catsr.cognac.snapchat.com\ngs.zrs.cognac.snapchat.com\nhelp.snapchat.com\nimage.email.snapchat.com\nimage.learn.ads.snapchat.com\ninteract-api.snapchat.com\ninternal.snappublisher.snapchat.com\nintg.snapchat.com\ninvestor.snapchat.com\ninvestors.snapchat.com\niosbeta.snapchat.com\njaguar-prod.snapchat.com\nk8s-gw-us-east1-aws.snapchat.com\nkit-staging.snapchat.com\nkit.snapchat.com\nlawenforcement.snapchat.com\nlearn.advertising.snapchat.com\nlens-lab.snapchat.com\nlens.snapchat.com\nlensstudio.snapchat.com\nlenstudio.snapchat.com\nlenswebbuilder.snapchat.com\nless.snapchat.com\nlink.snapchat.com\nmail.support.snapchat.com\nmail2.support.snapchat.com\nmap.snapchat.com\nmaps.snapchat.com\nmarketingapi.snapchat.com\nminis.snapchat.com\nmvm-20240424.snapchat.com\nmvm.mvm-20240424.snapchat.com\nmvm.snapchat.com\nmy.snapchat.com\nomnicollector.sn\n[... recortado: 2807 caracteres más]",
+  "bloqueado": false
+}
+{
+  "t": 1793983419.47,
+  "tipo": "herramienta",
+  "paso": 2,
+  "nombre": "correos_theharvester",
+  "argumentos": "{\"dominio\": \"snapchat.com\", \"fuentes\": \"crtsh,hackertarget,rapiddns\"}",
+  "resultado": "Fuentes: crtsh, hackertarget, rapiddns\n\nCorreos en alcance (0; 0 filtrados):\n\nHosts en alcance (155; 0 filtrados):\n0virus-antivirus.com.snappublisher.snapchat.com\n12antivirus.snappublisher.snapchat.com\n13.snappublisher.snapchat.com\n2012.snappublisher.snapchat.com\n4-antivirus.snappublisher.snapchat.com\n5.snappublisher.snapchat.com\n6-antivirus.snappublisher.snapchat.com\n7.antiviruschat-gateway332-prod.snappublisher.snapchat.com\n_mta-sts.snappublisher.snapchat.com\nacc.snappublisher.snapchat.com\naccounts.snapchat.com\nad-center.snapchat.com\nad-preview.snapchat.com\nads-preprod.snapchat.com\nads.snapchat.com\nadsapi.snapchat.com\nadvertising.snapchat.com\nai.snapchat.com\nam-api.snapchat.com\namchat.snapchat.com\nanalytics.anticloudappirus.snappublisher.snapchat.com\nantipayrus-private.snappublisher.snapchat.com\nantivirus-cloudfront.snappublisher.snapchat.com\nantivirus-kr.snappublisher.snapchat.com\nantivirus-reset.snappublisher.snapchat.com\nantivirus-spring.snappublisher.snapchat.com\nantivirus-tur.snappublisher.snapchat.com\nantivirus-us-east-3.snappublisher.snapchat.com\nantivirus-us-west-1.snappublisher.snapchat.com\nantivirus-z.snappublisher.snapchat.com\nantivirus.7.snappublisher.snapchat.com\nantivirus.chat-gateway075-prod.us-east-1.snappublisher.snapchat.com\nantivirus.dev1.snappublisher.snapchat.com\nantivirus.events.snappublisher.snapchat.com\nantivirus.internalantivirus-lb.snappublisher.snapchat.com\nantivirus.las.snappublisher.snapchat.com\nantivirus.marchvpnantivirus.snappublisher.snapchat.com\nantivirus.ssodocs.snappublisher.snapchat.com\nantivirus.trial.snappublisher.snapchat.com\nantivirus.us-east-1node.snappublisher.snapchat.com\nantivirussandbox.snappublisher.snapchat.com\nap-southeast1-aws192.snappublisher.snapchat.com\napi.snapchat.com\napi.snappublisher.snapchat.com\napp-analytics-dev.snapchat.com\napp-analytics-v2.snapchat.com\napp-analytics.snapchat.com\napp-snapchat.snapchat.com\napp.snapchat.com\nart.snapchat.com\nassets.snapchat.com\nauth.snapchat.com\naws-acc.api.snapchat.com\naws-proxy-gcp.api.snapchat.com\naws.api.snapchat.com\naws.duplex.snapchat.com\nbbs.snappublisher.snapchat.com\nbillingantivirus.snappublisher.snapchat.com\nbitmoji.api.snapchat.com\nbusiness-manager.snapchat.com\nbusiness-preprod.snapchat.com\nbusiness.snapchat.com\nbusinessapi.snapchat.com\nbusinesshelp.snapchat.com\nc.antivirus.billing.snappublisher.snapchat.com\ncalendar.snapchat.com\ncameos.snapchat.com\ncamera-kit.snapchat.com\ncdn.snapchat.com\nchat-gateway000-prod-antivirus-us-east-9.snappublisher.snapchat.com\nchat-gateway145-prodantivirus.trial.snappublisher.snapchat.com\nchat-gateway155-prod.snappublisher.snapchat.com\nchat-gateway296-prod-dev.snappublisher.snapchat.com\nchat-gateway392-prodml.snappublisher.snapchat.com\ncim-api.snappublisher.snapchat.com\ncim-dev.snappublisher.snapchat.com\nclick.learn.ads.snapchat.com\nclickantivirus.feb.snappublisher.snapchat.com\ncloud.learn.ads.snapchat.com\ncontrol.snappublisher.snapchat.com\ndirect-response-gcp.api.snapchat.com\nengineering.snappublisher.snapchat.com\n\n[... recortado: 2532 caracteres más]",
+  "bloqueado": false
+}
+{
+  "t": 1793983453.467,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"www.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://www.snapchat.com [200 OK] Cookies[sc-config-cache-key,sc-wcid], Country[UNITED STATES][US], HTML5, HTTPServer[API Gateway], IP[34.149.46.130], Open-Graph-Protocol[website], PoweredBy[Snap], Script[application/json], Strict-Transport-Security[max-age=31536000; includeSubDomains], Title[Snapchat - Say It In A Snap], UncommonHeaders[x-content-type-options,referrer-policy,permissions-policy,content-security-policy,link,x-envoy-upstream-service-time,alt-svc,x-gcp-cache-status], Via-Proxy[1.1 google, 1.1 google], X-Frame-Options[SAMEORIGIN], X-Powered-By[Next.js]",
+  "bloqueado": false
+}
+{
+  "t": 1793983454.341,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"api.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://api.snapchat.com [404 Not Found] Country[UNITED STATES][US], HTML5, IP[142.251.142.148], Title[Error 404 (Not Found)!!1], UncommonHeaders[referrer-policy,alt-svc]",
+  "bloqueado": false
+}
+{
+  "t": 1793983458.557,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"app.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://app.snapchat.com [404 Not Found] Country[UNITED STATES][US], HTTPServer[Google Frontend], IP[34.149.130.113], Title[404 Not Found], UncommonHeaders[x-snapchat-request-id,x-snapchat-notice,x-cloud-trace-context,alt-svc], Via-Proxy[1.1 google]",
+  "bloqueado": false
+}
+{
+  "t": 1793983463.308,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"ads.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://ads.snapchat.com [200 OK] Country[UNITED STATES][US], HTML5, HTTPServer[API Gateway], IP[34.149.46.130], Script[text/javascript], Strict-Transport-Security[max-age=31536000; includeSubDomains, max-age=31536000; includeSubDomains], Title[Snapchat Ads Manager], UncommonHeaders[access-control-allow-credentials,access-control-expose-headers,content-security-policy,cross-origin-opener-policy,cross-origin-resource-policy,origin-agent-cluster,referrer-policy,x-content-type-options,x-dns-prefetch-control,x-download-options,x-permitted-cross-domain-policies,x-request-id,reporting-endpoints,document-policy,x-envoy-upstream-service-time,alt-svc], Via-Proxy[1.1 google, 1.1 google], X-Frame-Options[SAMEORIGIN], X-XSS-Protection[0]",
+  "bloqueado": false
+}
+{
+  "t": 1793983464.646,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"chat.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "whatweb no devolvió resultados para chat.snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983464.669,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"www.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "web-gcp.api.snapchat.com.\nweb-gcp.api.sc-gw.com.\n34.149.46.130",
+  "bloqueado": false
+}
+{
+  "t": 1793983464.717,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"api.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "feelinsonice-hrd.appspot.com.\n142.251.142.148",
+  "bloqueado": false
+}
+{
+  "t": 1793983464.746,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"app.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "app-snapchat.snapchat.com.\n34.149.130.113",
+  "bloqueado": false
+}
+{
+  "t": 1793983464.766,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"ads.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "web-gcp.api.snapchat.com.\nweb-gcp.api.sc-gw.com.\n34.149.46.130",
+  "bloqueado": false
+}
+{
+  "t": 1793983464.789,
+  "tipo": "herramienta",
+  "paso": 3,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"chat.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "Sin registros A para chat.snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983474.942,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"gateway.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "Sin registros A para gateway.snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983474.983,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"blog.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "Sin registros A para blog.snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983475.009,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"developer.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "34.120.54.238",
+  "bloqueado": false
+}
+{
+  "t": 1793983475.085,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"store.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "ghs.googlehosted.com.\n108.177.15.121",
+  "bloqueado": false
+}
+{
+  "t": 1793983475.152,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"investors.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "34.120.54.238",
+  "bloqueado": false
+}
+{
+  "t": 1793983476.801,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"blog.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "whatweb no devolvió resultados para blog.snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983480.974,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"developer.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://developer.snapchat.com [308 Permanent Redirect] Country[UNITED STATES][US], HTTPServer[Google Frontend], IP[34.120.54.238], RedirectLocation[https://developers.snap.com/], UncommonHeaders[x-cloud-trace-context,x-external-managed-migration-selected-scheme,alt-svc], Via-Proxy[1.1 google], X-Powered-By[Express]",
+  "bloqueado": false
+}
+{
+  "t": 1793983485.232,
+  "tipo": "herramienta",
+  "paso": 4,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"store.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://store.snapchat.com [200 OK] Country[UNITED STATES][US], HTML5, HTTPServer[Google Frontend], IP[108.177.15.121], Script[text/javascript], Strict-Transport-Security[max-age=31536000; includeSubdomains], Title[Snap Store], UncommonHeaders[x-content-type-options,content-security-policy,x-cloud-trace-context], X-Frame-Options[DENY], X-XSS-Protection[1; mode=block]",
+  "bloqueado": false
+}
+{
+  "t": 1793983494.383,
+  "tipo": "herramienta",
+  "paso": 5,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"creators.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "34.120.54.238",
+  "bloqueado": false
+}
+{
+  "t": 1793983494.491,
+  "tipo": "herramienta",
+  "paso": 5,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"advertising.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "ghs.googlehosted.com.\n108.177.15.121",
+  "bloqueado": false
+}
+{
+  "t": 1793983494.521,
+  "tipo": "herramienta",
+  "paso": 5,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"business.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "web-gcp.api.snapchat.com.\nweb-gcp.api.sc-gw.com.\n34.149.46.130",
+  "bloqueado": false
+}
+{
+  "t": 1793983494.551,
+  "tipo": "herramienta",
+  "paso": 5,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"lens.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "d19f6ujxq26e2c.cloudfront.net.\n99.84.9.121\n99.84.9.125\n99.84.9.64\n99.84.9.49",
+  "bloqueado": false
+}
+{
+  "t": 1793983502.936,
+  "tipo": "herramienta",
+  "paso": 5,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"creators.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://creators.snapchat.com [200 OK] Content-Language[en-US], Country[UNITED STATES][US], HTML5, HTTPServer[Google Frontend], IP[34.120.54.238], Open-Graph-Protocol[website], Script[application/javascript,module], Strict-Transport-Security[max-age=31536000; includeSubDomains; preload], Title[Snapchat Creators | Learn to Create, Grow &amp; Monetize], UncommonHeaders[x-cloud-trace-context,content-security-policy,referrer-policy,x-content-type-options,x-dns-prefetch-control,x-download-options,permissions-policy,accept-ch,reporting-endpoints,x-accel-buffering,x-external-managed-migration-selected-scheme,alt-svc], Via-Proxy[1.1 google], X-Frame-Options[DENY], X-XSS-Protection[0]",
+  "bloqueado": false
+}
+{
+  "t": 1793983505.183,
+  "tipo": "herramienta",
+  "paso": 5,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"advertising.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "whatweb no devolvió resultados para advertising.snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983512.651,
+  "tipo": "herramienta",
+  "paso": 6,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"auth.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "ghs.googlehosted.com.\n108.177.15.121",
+  "bloqueado": false
+}
+{
+  "t": 1793983512.675,
+  "tipo": "herramienta",
+  "paso": 6,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"profiles.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "Sin registros A para profiles.snapchat.com.",
+  "bloqueado": false
+}
+{
+  "t": 1793983512.741,
+  "tipo": "herramienta",
+  "paso": 6,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"search.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "ghs.googlehosted.com.\n108.177.15.121",
+  "bloqueado": false
+}
+{
+  "t": 1793983512.83,
+  "tipo": "herramienta",
+  "paso": 6,
+  "nombre": "dns_registros",
+  "argumentos": "{\"dominio\": \"snappublisher.snapchat.com\", \"tipo\": \"A\"}",
+  "resultado": "ghs.googlehosted.com.\n108.177.15.121",
+  "bloqueado": false
+}
+{
+  "t": 1793983516.925,
+  "tipo": "herramienta",
+  "paso": 6,
+  "nombre": "tecnologias_whatweb",
+  "argumentos": "{\"dominio\": \"lens.snapchat.com\", \"esquema\": \"https\"}",
+  "resultado": "https://lens.snapchat.com [301 Moved Permanently] Amazon-CloudFront, Country[UNITED STATES][US], HTTPServer[CloudFront], IP[99.84.9.64], RedirectLocation[https://www.snapchat.com/lens], UncommonHeaders[x-amz-cf-pop,x-amz-cf-id], Via-Proxy[1.1 622d0a5eea7bcc7b68b8727e663d8a3e.cloudfront.net (CloudFront)]",
+  "bloqueado": false
+}
+{
+  "t": 1793983574.494,
+  "tipo": "fin",
+  "paso": 7,
+  "informe": "\n\n## Informe de Reconocimiento Pasivo: snapchat.com\n\n---\n\n### 1. Registro WHOIS\n\n| Campo | Valor | Herramienta |\n|-------|-------|-------------|\n| Dominio | SNAPCHAT.COM | `whois_dominio` |\n| Fecha de registro | 2012-02-28 | `whois_dominio` |\n| Fecha de expiración | 2034-02-28 | `whois_dominio` |\n| Última actualización | 2026-01-28 | `whois_dominio` |\n| Registrador | Entidad 292 (GoDaddy) | `whois_dominio` |\n| Estado | client delete/transfer/update prohibited, server delete/transfer/update prohibited | `whois_dominio` |\n| Nameservers | ns-1468.awsdns-55.org, ns-1892.awsdns-44.co.uk, ns-220.awsdns-27.com, ns-530.awsdns-02.net | `whois_dominio` |\n\n---\n\n### 2. Registros DNS Principales\n\n#### A\n- `snapchat.com` → `34.149.46.130` (`dns_registros`)\n\n#### AAAA\n- Sin registros IPv6 para `snapchat.com` (`dns_registros`)\n\n#### MX\n- `10 aspmx.l.google.com.`\n- `20 alt1.aspmx.l.google.com.`\n- `30 alt2.aspmx.l.google.com.`\n- `40 aspmx2.googlemail.com.`\n- `50 aspmx3.googlemail.com.`\n- (`dns_registros`)\n\n#### NS\n- `ns-1468.awsdns-55.org.`\n- `ns-1892.awsdns-44.co.uk.`\n- `ns-220.awsdns-27.com.`\n- `ns-530.awsdns-02.net.`\n- (`dns_registros`)\n\n#### SOA\n- `ns-220.awsdns-27.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400` (`dns_registros`)\n\n#### TXT (destacados)\n- SPF: `v=spf1 include:_spf.google.com include:mail.zendesk.com include:aspmx.pardot.com -all`\n- Verificaciones de dominio: Google (5 registros), Apple, Microsoft, Dropbox, Atlassian (3), Adobe, OneTrust (2), Yahoo (3), OpenAI, Anthropic, Shopify, HubSpot, Miro, Docker, Segment, JAMF, Autodesk, Canva, Linear, LogMeIn, TailScale, Censys, Smartsheet, Krea, Arcules, Parallels, Snap, Sonatype, Pardot\n- (`dns_registros`)\n\n---\n\n### 3. Subdominios en Alcance\n\n#### crt.sh (transparencia de certificados)\n- **221 subdominios** dentro del alcance autorizado (`subdominios_crtsh`)\n\n#### subfinder (fuentes públicas)\n- **264 subdominios** dentro del alcance autorizado (`subdominios_subfinder`)\n\n#### theHarvester (hosts)\n- **155 hosts** dentro del alcance (`correos_theharvester`)\n- **0 correos electrónicos** encontrados (`correos_theharvester`)\n\n---\n\n### 4. DNS de Subdominios Clave\n\n| Subdominio | Registro A/CNAME | Herramienta |\n|------------|------------------|-------------|\n| `www.snapchat.com` | `34.149.46.130` (CNAME: `web-gcp.api.snapchat.com.` → `web-gcp.api.sc-gw.com.`) | `dns_registros` |\n| `api.snapchat.com` | `142.251.142.148` (CNAME: `feelinsonice-hrd.appspot.com.`) | `dns_registros` |\n| `app.snapchat.com` | `34.149.130.113` (CNAME: `app-snapchat.snapchat.com.`) | `dns_registros` |\n| `ads.snapchat.com` | `34.149.46.130` (CNAME: `web-gcp.api.snapchat.com.` → `web-gcp.api.sc-gw.com.`) | `dns_registros` |\n| `chat.snapchat.com` | Sin registros A | `dns_registros` |\n| `developer.snapchat.com` | `34.120.54.238` | `dns_registros` |\n| `store.snapchat.com` | `108.177.15.121` (CNAME: `ghs.googlehosted.com.`) | `dns_registros` |\n| `investors.snapchat.com` | `34.120.54.238` | `dns_registros` |\n| `creators.snapchat.com` | `34.120.54.238` | `dns_registros` |\n| `advertising.snapchat.com` | `108.177.15.121` (CNAME: `ghs.googlehosted.com.`) | `dns_registros` |\n| `business.snapchat.com` | `34.149.46.130` (CNAME: `web-gcp.api.snapchat.com.` → `web-gcp.api.sc-gw.com.`) | `dns_registros` |\n| `lens.snapchat.com` | `99.84.9.121, 99.84.9.125, 99.84.9.64, 99.84.9.49` (CNAME: `d19f6ujxq26e2c.cloudfront.net.`) | `dns_registros` |\n| `auth.snapchat.com` | `108.177.15.121` (CNAME: `ghs.googlehosted.com.`) | `dns_registros` |\n| `search.snapchat.com` | `108.177.15.121` (CNAME: `ghs.googlehosted.com.`) | `dns_registros` |\n| `snappublisher.snapchat.com` | `108.177.15.121` (CNAME: `ghs.googlehosted.com.`) | `dns_registros` |\n| `gateway.snapchat.com` | Sin registros A | `dns_registros` |\n| `blog.snapchat.com` | Sin registros A | `dns_registros` |\n| `profiles.snapchat.com` | Sin registros A | `dns_registros` |\n\n---\n\n### 5. Huella Tecnológica\n\n| Dominio | Tecnologías Detectadas | Herramienta |\n|---------|------------------------|-------------|\n| `www.snapchat.com` | **Servidor**: API Gateway, **Framework**: Next.js, **CDN/Proxy**: Google (Via: 1.1 google), **Seguridad**: HSTS (31536000s, includeSubDomains), X-Frame-Options: SAMEORIGIN, CSP, Referrer-Policy, Permissions-Policy, X-Content-Type-Options, **Cookies**: sc-config-cache-key, sc-wcid, **Powered-By**: Snap, **OpenGraph**: website | `tecnologias_whatweb` |\n| `api.snapchat.com` | **Servidor**: Google Frontend, **IP**: 142.251.142.148, **Proxy**: Google, **Respuesta**: 404 Not Found | `tecnologias_whatweb` |\n| `app.snapchat.com` | **Servidor**: Google Frontend, **IP**: 34.149.130.113, **Headers**: x-snapchat-request-id, x-snapchat-notice, x-cloud-trace-context, **Proxy**: Google | `tecnologias_whatweb` |\n| `ads.snapchat.com` | **Servidor**: API Gateway, **IP**: 34.149.46.130, **Seguridad**: HSTS (31536000s, includeSubDomains), CSP, X-Frame-Options: SAMEORIGIN, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, Cross-Origin policies, **Proxy**: Google (doble salto), **Headers**: reporting-endpoints, x-envoy-upstream-service-time | `tecnologias_whatweb` |\n| `developer.snapchat.com` | **Servidor**: Google Frontend, **Framework**: Express, **IP**: 34.120.54.238, **Proxy**: Google, **Redirección**: 308 → developers.snap.com | `tecnologias_whatweb` |\n| `store.snapchat.com` | **Servidor**: Google Frontend, **IP**: 108.177.15.121, **Seguridad**: HSTS (31536000s, includeSubdomains), X-Frame-Options: DENY, X-XSS-Protection: 1; mode=block, CSP, X-Content-Type-Options | `tecnologias_whatweb` |\n| `creators.snapchat.com` | **Servidor**: Google Frontend, **IP**: 34.120.54.238, **Seguridad**: HSTS (31536000s, includeSubDomains, preload), X-Frame-Options: DENY, CSP, Referrer-Policy, Permissions-Policy, X-Content-Type-Options, **OpenGraph**: website | `tecnologias_whatweb` |\n| `lens.snapchat.com` | **Servidor**: CloudFront (Amazon), **CDN**: Amazon CloudFront, **IP**: 99.84.9.64, **Proxy**: CloudFront, **Redirección**: 301 → www.snapchat.com/lens | `tecnologias_whatweb` |\n\n---\n\n### 6. Infraestructura Detectada\n\n| Componente | Detalle |\n|------------|---------|\n| **DNS** | AWS Route 53 (nameservers awsdns-*) |\n| **Hosting principal** | Google Cloud Platform (IPs 34.149.x.x, 34.120.x.x) |\n| **CDN** | Google Cloud CDN / Proxy + Amazon CloudFront (lens.snapchat.com) |\n| **Correo** | Google Workspace (MX: aspmx.l.google.com) |\n| **Framework web** | Next.js (www.snapchat.com), Express (developer.snapchat.com) |\n| **Gateway API** | API Gateway con Envoy proxy (x-envoy-upstream-service-time) |\n| **App Engine** | App Engine para api.snapchat.com (feelinsonice-hrd.appspot.com) |\n| **Google Hosted** | Múltiples subdominios en Google Hosted (ghs.googlehosted.com) |\n\n---\n\n### 7. Resumen\n\n- **Dominio principal**: snapchat.com, registrado en 2012, expira en 2034\n- **DNS**: Gestionado por AWS Route 53 con 4 nameservers globales\n- **Correo**: Google Workspace con SPF incluyendo Google, Zendesk y Pardot\n- **Subdominios identificados**: 221-264 subdominios en alcance según fuente\n- **Infraestructura**: Híbrida entre Google Cloud (principal) y AWS (DNS), con CloudFront para algunos servicios específicos\n- **Seguridad**: HSTS con preload en varios subdominios, CSP configurado, protección XSS\n- **Tecnologías**: Next.js, Express, API Gateway con Envoy, Google Frontend/Proxy, Amazon CloudFront",
+  "tokens": {
+    "entrada": 69910,
+    "salida": 5887
+  }
+}
+```
